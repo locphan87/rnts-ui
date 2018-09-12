@@ -6,7 +6,7 @@ import { match } from './utils'
 const NormalText = glamorous.text(({ theme, color }) => ({
   fontFamily: theme.fonts.NotoSans.Regular,
   fontSize: 12,
-  color: color || theme.colors.negative
+  color: color || theme.colors.text
 }))
 const LabelText = glamorous.text(({ theme, color }) => ({
   fontFamily: theme.fonts.NotoSans.SemiBold,
