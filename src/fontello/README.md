@@ -7,4 +7,4 @@ https://github.com/fontello/fontello/wiki/How-to-save-and-load-projects
 - Edit, add, remove icons
 - On download dropdown button choose `Get config only` to download new config.json
 - Replace new config.json to ~/src/fontello/config.json
-- Run `yarn build:icon` to generate new atlas-icon.ttf file
+- Run `yarn build:icon` to generate new rnts-icon.ttf file
