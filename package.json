@@ -1,0 +1,38 @@
+{
+  "name": "rnts-ui",
+  "version": "1.0.0",
+  "description": "common UI components for mobile apps",
+  "main": "index.tsx",
+  "scripts": {
+    "build:icon": "make fontello",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "react-native",
+    "typescript",
+    "ui"
+  ],
+  "author": "Loc Phan",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=16.3",
+    "react-native": ">=0.55"
+  },
+  "devDependencies": {
+    "expo": "29.0.0",
+    "fontello-cli": "0.4.0",
+    "glamorous-native": "1.4.0",
+    "ramda": "^0.25.0",
+    "react": "^16.3.1",
+    "tslib": "^1.9.3"
+  }
+}
