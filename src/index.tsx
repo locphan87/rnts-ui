@@ -1,4 +1,5 @@
 export { default as colors } from './colors'
+export { default as size } from './size'
 export { default as fonts, fontMaps } from './fonts'
 export { default as fontello } from './fontello'
 export { default as Icon } from './Icon.component'
