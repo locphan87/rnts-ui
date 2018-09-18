@@ -3,14 +3,14 @@ import React from 'react'
 
 import { match } from './utils'
 
-const NormalText = glamorous.text(({ theme, color }) => ({
+const NormalText = glamorous.text(({ theme, color, size }) => ({
   fontFamily: theme.fonts.NotoSans.Regular,
-  fontSize: 12,
+  fontSize: size || theme.size.normal,
   color: color || theme.colors.text
 }))
-const LabelText = glamorous.text(({ theme, color }) => ({
+const LabelText = glamorous.text(({ theme, color, size }) => ({
   fontFamily: theme.fonts.NotoSans.SemiBold,
-  fontSize: 10,
+  fontSize: size || theme.size.label,
   color: color || theme.colors.warm_grey
 }))
 

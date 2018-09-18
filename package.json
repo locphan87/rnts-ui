@@ -2,7 +2,7 @@
   "name": "rnts-ui",
   "version": "1.0.3",
   "description": "common UI components for mobile apps",
-  "main": "index.tsx",
+  "main": "./src/index.tsx",
   "scripts": {
     "build:icon": "make fontello",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,19 +12,20 @@
     "url": "git@github.com:phanhoangloc/rnts-ui.git"
   },
   "keywords": [
+    "glamorous-native",
     "react-native",
+    "react-native-ts",
     "typescript",
     "ui"
   ],
-  "author": "Loc Phan",
-  "license": "ISC",
+  "author": "Loc Phan <phanhoangloc@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/phanhoangloc/rnts-ui/issues"
   },
   "homepage": "https://github.com/phanhoangloc/rnts-ui",
   "peerDependencies": {
-    "react": ">=16.3",
-    "react-native": ">=0.55"
+    "react": ">=16.3"
   },
   "devDependencies": {
     "expo": "29.0.0",

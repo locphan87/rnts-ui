@@ -1,13 +1,23 @@
 import { Constants } from 'expo'
 import glamorous, { View as RNView } from 'glamorous-native'
-import React from 'react'
+import React, { SFC } from 'react'
 
 import { match } from './utils'
 
-// use Screen when there is no navigation header
-const Screen = glamorous.view({
-  flex: 1,
-  paddingTop: Constants.statusBarHeight
+interface IView {
+  component?: string
+  [styleProp: string]: any
+}
+
+const ExpandView = glamorous.view({
+  flex: 1
+})
+const Row = glamorous.view({
+  flexDirection: 'row'
+})
+const NavHeader = glamorous.view({
+  paddingTop: Constants.statusBarHeight,
+  flexDirection: 'row'
 })
 const CenterView = glamorous.view({
   flex: 1,
@@ -35,21 +45,15 @@ const HR = glamorous.view(({ color, width, height }) => ({
   width: width || '100%',
   backgroundColor: color
 }))
-const ExpandView = glamorous.view({
-  flex: 1
-})
-const Row = glamorous.view({
-  flexDirection: 'row'
-})
 
 // THE UNIVERSAL VIEW COMPONENT
 // Use this for `easier` imports (not recommended)
-const View = ({ component, ...rest }) => {
+const View: SFC<IView> = ({ component, ...rest }) => {
   const Component = match(component)({
     Border,
     ExpandView,
     CenterView,
-    Screen,
+    NavHeader,
     Row,
     HR,
     Circle,
@@ -59,4 +63,4 @@ const View = ({ component, ...rest }) => {
   return <Component {...rest} />
 }
 
-export { View, HR, Border, Screen, CenterView, ExpandView, Row, Circle }
+export { View, HR, Border, NavHeader, CenterView, ExpandView, Row, Circle }
