@@ -8,6 +8,11 @@ const NormalText = glamorous.text(({ theme, color, size }) => ({
   fontSize: size || theme.size.normal,
   color: color || theme.colors.text
 }))
+const Title = glamorous.text(({ theme, color, size }) => ({
+  fontFamily: theme.fonts.NotoSans.Bold,
+  fontSize: size || theme.size.title,
+  color: color || theme.colors.text
+}))
 const LabelText = glamorous.text(({ theme, color, size }) => ({
   fontFamily: theme.fonts.NotoSans.SemiBold,
   fontSize: size || theme.size.label,
@@ -19,6 +24,7 @@ const LabelText = glamorous.text(({ theme, color, size }) => ({
 const Text = ({ component, ...rest }) => {
   const Component = match(component)({
     LabelText,
+    Title,
     NormalText,
     _: RNText
   })
@@ -28,6 +34,7 @@ const Text = ({ component, ...rest }) => {
 
 export {
   Text,
+  Title,
   LabelText,
   NormalText,
 }
