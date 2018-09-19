@@ -1,19 +1,42 @@
-import glamorous, { Text as RNText } from 'glamorous-native'
-import React from 'react'
+import glamorous  from 'glamorous-native'
+import React, { SFC } from 'react'
 
 import { match } from './utils'
 
-const NormalText = glamorous.text(({ theme, color, size }) => ({
+interface ITheme {
+  fonts: {
+    [fontName: string]: {
+      [fontStyle: string]: any
+    }
+  }
+  colors: {
+    [colorName: string]: string
+  }
+  size: {
+    [sizeName: string]: number
+  }
+}
+interface ITextProps {
+  theme: ITheme
+  color?: string
+  size?: number
+}
+interface IUniversalComponentProps {
+  component?: string
+  [otherProp: string]: any
+}
+
+const NormalText = glamorous.text(({ theme, color, size }: ITextProps) => ({
   fontFamily: theme.fonts.NotoSans.Regular,
   fontSize: size || theme.size.normal,
   color: color || theme.colors.text
 }))
-const Title = glamorous.text(({ theme, color, size }) => ({
+const Title = glamorous.text(({ theme, color, size }: ITextProps) => ({
   fontFamily: theme.fonts.NotoSans.Bold,
   fontSize: size || theme.size.title,
   color: color || theme.colors.text
 }))
-const LabelText = glamorous.text(({ theme, color, size }) => ({
+const LabelText = glamorous.text(({ theme, color, size }: ITextProps) => ({
   fontFamily: theme.fonts.NotoSans.SemiBold,
   fontSize: size || theme.size.label,
   color: color || theme.colors.warm_grey
@@ -21,12 +44,12 @@ const LabelText = glamorous.text(({ theme, color, size }) => ({
 
 // THE UNIVERSAL TEXT COMPONENT
 // Use this for `easier` imports (recommended)
-const Text = ({ component, ...rest }) => {
+const Text: SFC<IUniversalComponentProps> = ({ component, ...rest }) => {
   const Component = match(component)({
     LabelText,
     Title,
     NormalText,
-    _: RNText
+    _: glamorous.text({})
   })
 
   return <Component {...rest} />
@@ -37,4 +60,7 @@ export {
   Title,
   LabelText,
   NormalText,
+  ITextProps,
+  ITheme,
+  IUniversalComponentProps
 }
