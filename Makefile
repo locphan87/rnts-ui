@@ -11,3 +11,4 @@ build-js:
 	cp -R ./src/fontello ./dist
 	rm -rf ./dist/fontello/index.tsx
 	tsc --project tsconfig.json --skipLibCheck
+	git add ./dist --force
