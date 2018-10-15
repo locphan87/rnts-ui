@@ -4,9 +4,9 @@
   "description": "common UI components for mobile apps",
   "main": "./dist/index.js",
   "scripts": {
-    "prebuild": "rm -rf dist",
-    "build": "tsc --project tsconfig.json --skipLibCheck",
+    "build": "make build-js",
     "build:icon": "make fontello",
+    "preversion": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
